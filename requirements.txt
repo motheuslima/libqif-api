@@ -1,0 +1,4 @@
+Flask==2.2.2
+Flask-Cors==3.0.10
+numpy==1.23.5
+qif==1.2.2
