@@ -19,6 +19,3 @@ refinement(app)
 @app.route('/')
 def main():
   return ("Hello World")
-
-
-app.run(host='0.0.0.0')
