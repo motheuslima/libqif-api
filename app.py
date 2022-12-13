@@ -1,5 +1,3 @@
-import os
-
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from fractions import Fraction as rat
@@ -9,8 +7,6 @@ import qif as qif
 from measureBayesVuln import measureBayesVuln
 from measureGuessing import measureGuessing
 from refinement import refinement
-
-port = int(os.environ.get('PORT', 5000))
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/app/*": {"origins": "*"}})
@@ -25,4 +21,4 @@ def main():
   return ("Hello World")
 
 
-app.run(host='0.0.0.0', port=port, debug=True)
+app.run(host='0.0.0.0')
