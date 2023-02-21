@@ -2,8 +2,11 @@ from shared import *
 from flask import jsonify, request
 import qif as qif
 
+
 def measureBayesVuln(app):
-  @app.route('/app/measure/bayes-vuln/add-leakage', methods=['POST'])
+
+  @app.route('/app/measure/bayes-vuln/add-leakage',
+             methods=['POST'])
   def measure_bayesvuln_addLeakage():
     pi = request.json.get('pi')
     C = request.json.get('C')
@@ -18,7 +21,8 @@ def measureBayesVuln(app):
   def measure_bayesvuln_minEntropyLeakage():
     pi = request.json.get('pi')
     C = request.json.get('C')
-    return jsonify({'result': str(qif.measure.bayes_vuln.min_entropy_leakage(pi, C))})
+    return jsonify(
+      {'result': str(qif.measure.bayes_vuln.min_entropy_leakage(pi, C))})
 
   @app.route('/app/measure/bayes-vuln/mult-capacity', methods=['POST'])
   def measure_bayesvuln_multCapacity():
