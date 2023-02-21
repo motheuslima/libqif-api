@@ -41,7 +41,7 @@ utility(app)
 
 @app.route('/')
 def main():
-  return ("Hello World")
+  return ("To use the LIBQIF API go to https://motheuslima.github.io/libqif-front")
 
 @app.errorhandler(HTTPException)
 def handle_exception(e):
